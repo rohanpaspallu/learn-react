@@ -35,9 +35,18 @@ class App extends Component{
       <div className="App">
         <h1>hello this is a react application created by Rohan</h1>
         <button onClick={this.switchNameHandler}>Submit here</button>
-        <Person name= {this.state.persons[0].name} age={this.state.persons[0].age}>My like to play badminton.</Person>
-        <Person name= {this.state.persons[1].name} age={this.state.persons[1].age}>He is a person as well.</Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>He is a buffallo</Person>
+        <Person 
+          name= {this.state.persons[0].name} 
+          age={this.state.persons[0].age}
+          click={this.switchNameHandler}>My like to play badminton.</Person>
+        <Person 
+          name= {this.state.persons[1].name} 
+          age={this.state.persons[1].age}
+          click={this.switchNameHandler}>He is a person as well.</Person>
+        <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age}
+          click={this.switchNameHandler}>He is a buffallo</Person>
       </div>
     );
   }
