@@ -14,7 +14,8 @@ class App extends Component{
         { name : 'Nisarg', age : 23},
         {name : 'Alay', age : 24}
       ],
-      otherState: 'some other value'
+      otherState: 'some other value',
+      showPersons: false
     
     };
 
@@ -39,24 +40,40 @@ class App extends Component{
       ]
     })
   }
+
+  togglePersonsHandler= () =>{
+    const doesShow = this.state.showPersons;
+    this.setState({showPersons: !doesShow});
+
+  }
+
+
   render(){
     return (
       <div className="App">
         <h1>hello this is a react application created by Rohan</h1>
-        <button onClick={this.switchNameHandler.bind(this, 'rohan deepak paspallu')}>Submit here</button>
-        <Person 
-          name= {this.state.persons[0].name} 
-          age={this.state.persons[0].age}
-          click={this.switchNameHandler}>My like to play badminton.</Person>
-        <Person 
-          name= {this.state.persons[1].name} 
-          age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this, 'ron')}
-          changed = {this.nameChangedHandler}>He is a person as well.</Person>
-        <Person 
-          name={this.state.persons[2].name} 
-          age={this.state.persons[2].age}
-          click={this.switchNameHandler}>He is a buffallo</Person>
+        <button onClick={this.togglePersonsHandler}>Submit here</button>
+        {
+          this.state.showPersons===true ?
+            <div>
+              <Person 
+                name= {this.state.persons[0].name} 
+                age={this.state.persons[0].age}
+                click={this.switchNameHandler}>My like to play badminton.</Person>
+              <Person 
+                name= {this.state.persons[1].name} 
+                age={this.state.persons[1].age}
+                click={this.switchNameHandler.bind(this, 'ron')}
+                changed = {this.nameChangedHandler}>He is a person as well.</Person>
+              <Person 
+                name={this.state.persons[2].name} 
+                age={this.state.persons[2].age}
+                click={this.switchNameHandler}>He is a buffallo</Person>
+            </div> 
+          : null
+        }
+        
+        
       </div>
     );
   }
