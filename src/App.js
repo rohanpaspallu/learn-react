@@ -68,6 +68,14 @@ class App extends Component{
 
   render(){
 
+    const style = {
+      backgroundColor: 'green',
+      color: 'white',
+      border: '1px solid blue',
+      font: 'inherit',
+      padding: '8px',
+      cursor: 'pointer',
+    };
     let persons = null;
     if(this.state.showPersons){
       persons = (
@@ -82,11 +90,26 @@ class App extends Component{
           })}
         </div>
       );
+      style.backgroundColor= 'red';
     }
+
+
+    const classes = [];
+
+    if(this.state.persons.length<=2){
+      classes.push('red');
+    }
+
+    if(this.state.persons.length<=1){
+      classes.push('bold');
+    }
+
     return (
       <div className="App">
         <h1>hello this is a react application created by Rohan</h1>
-        <button onClick={this.togglePersonsHandler}>Submit here</button>
+
+        <p className={classes.join(' ')}> This actually works.</p>
+        <button onClick={this.togglePersonsHandler} style={style}>Submit here</button>
         {persons}   
       </div>
     );
