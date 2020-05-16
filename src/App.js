@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 import Person from './Person/Person';
 import './App.css';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 
 class App extends Component{
@@ -118,13 +118,16 @@ class App extends Component{
     }
 
     return (
-      <div className="App">
+      <StyleRoot>
+        <div className="App">
         <h1>hello this is a react application created by Rohan</h1>
 
         <p className={classes.join(' ')}> This actually works.</p>
         <button onClick={this.togglePersonsHandler} style={style}>Submit here</button>
         {persons}   
-      </div>
+        </div>
+    </StyleRoot>
+      
     );
   }
     
