@@ -3,8 +3,23 @@
 import React, {Component} from 'react';
 import Person from './Person/Person';
 import './App.css';
-import Radium, { StyleRoot } from 'radium';
+import styled from 'styled-components';
+// import Radium, { StyleRoot } from 'radium';
 
+
+const StyledButton = styled.button`
+background-color: ${props => props.alt ? 'red' : 'green'};
+color: white;
+border: 1px solid blue;
+font: inherit;
+padding: 8px;
+cursor: pointer;
+&:hover {
+  background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
+  color:black;
+}
+
+`;
 
 class App extends Component{
 
@@ -68,19 +83,6 @@ class App extends Component{
 
 
   render(){
-
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      border: '1px solid blue',
-      font: 'inherit',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor:'lightgreen',
-        color:'black'
-      }
-    };
     let persons = null;
     if(this.state.showPersons){
       persons = (
@@ -95,12 +97,12 @@ class App extends Component{
           })}
         </div>
       );
-      style.backgroundColor= 'red';
+      // style.backgroundColor= 'red';
 
-      style[':hover'] = {
-        backgroundColor:'salmon',
-        color:'black'
-      }
+      // style[':hover'] = {
+      //   backgroundColor:'salmon',
+      //   color:'black'
+      // }
 
 
 
@@ -118,15 +120,15 @@ class App extends Component{
     }
 
     return (
-      <StyleRoot>
+      // <StyleRoot>
         <div className="App">
         <h1>hello this is a react application created by Rohan</h1>
 
         <p className={classes.join(' ')}> This actually works.</p>
-        <button onClick={this.togglePersonsHandler} style={style}>Submit here</button>
+        <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>Submit here</StyledButton>
         {persons}   
         </div>
-    </StyleRoot>
+    // </StyleRoot>
       
     );
   }
@@ -135,6 +137,7 @@ class App extends Component{
     // return(React.createElement('div',{className:'App'},React.createElement('h1',null,'Hello Rohan')));
 }
 
-export default Radium(App);
+// export default Radium(App);
+export default App;
 
 
