@@ -7,19 +7,19 @@ import styled from 'styled-components';
 // import Radium, { StyleRoot } from 'radium';
 
 
-const StyledButton = styled.button`
-background-color: ${props => props.alt ? 'red' : 'green'};
-color: white;
-border: 1px solid blue;
-font: inherit;
-padding: 8px;
-cursor: pointer;
-&:hover {
-  background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
-  color:black;
-}
+// const StyledButton = styled.button`
+// background-color: ${props => props.alt ? 'red' : 'green'};
+// color: white;
+// border: 1px solid blue;
+// font: inherit;
+// padding: 8px;
+// cursor: pointer;
+// &:hover {
+//   background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
+//   color:black;
+// }
 
-`;
+// `;
 
 class App extends Component{
 
@@ -125,7 +125,7 @@ class App extends Component{
         <h1>hello this is a react application created by Rohan</h1>
 
         <p className={classes.join(' ')}> This actually works.</p>
-        <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>Submit here</StyledButton>
+        <button className="button" onClick={this.togglePersonsHandler}>Submit here</button>
         {persons}   
         </div>
     // </StyleRoot>
