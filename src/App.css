@@ -18,7 +18,7 @@
   font-weight: bold;
 }
 
-.button{
+.Button{
   background-color:green;
   color: white;
   border: 1px solid blue;
@@ -28,7 +28,15 @@
 }
 
 
-.button:hover {
+.Button:hover {
   background-color: lightgreen;
   color:black;
+}
+
+.Button.Red{
+  background-color: red;
+}
+
+button.red:hover{
+  background-color: salmon;
 }
