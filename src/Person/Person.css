@@ -5,6 +5,7 @@
     box-shadow: 0 2px 3px #ccc;
     padding: 16px;
     text-align: center;
+<<<<<<< HEAD
 }
 
 @media (min-width: 500px) {
@@ -12,3 +13,13 @@
         width: 450px;
     }
 }
+=======
+  }
+  
+  @media (min-width: 500px) {
+    .Person {
+      width: 450px;
+    }
+  }
+  
+>>>>>>> af44a7ae24fcbf6f71294dd53d8a00e1fe797689
