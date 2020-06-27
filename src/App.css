@@ -11,19 +11,11 @@
 }
 
 .App button {
-<<<<<<< HEAD
   border: 1px solid blue;
   padding: 16px;
   background-color: green;
   font: inherit;
   color: white;
-=======
-  background-color: green;
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 8px;
->>>>>>> af44a7ae24fcbf6f71294dd53d8a00e1fe797689
   cursor: pointer;
 }
 
@@ -38,9 +30,5 @@
 
 .App button.Red:hover {
   background-color: salmon;
-<<<<<<< HEAD
   color: black;
 }
-=======
-}
->>>>>>> af44a7ae24fcbf6f71294dd53d8a00e1fe797689
